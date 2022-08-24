@@ -32,9 +32,25 @@ const App = () => {
         
     }
     
+    
     useEffect(() => {
         getAllUsers();
     }, [])
+    
+    const handleDelete = (id) => {
+        fetch(url + `/${id}`, {method: 'DELETE'})
+            .then((res) => {
+                if (!res.ok) {
+                    throw Error("could not delete");
+                }
+                getAllUsers();
+                
+            })
+            .catch((err) => {
+                setError(err.message);
+            })
+    }
+    
     return (
         <div className="App">
             <h1>User Management App</h1>
@@ -49,7 +65,10 @@ const App = () => {
                             <p>{username}</p>
                             <p>{email}</p>
                             <button className="btn">Add</button>
-                            <button className="btn">Delete</button>
+                            <button className="btn" onClick={() => {
+                                handleDelete(id)
+                            }}>Delete
+                            </button>
                         </article>
                     )
                 })}
