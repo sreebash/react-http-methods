@@ -41,18 +41,20 @@ const App = () => {
             {isLoading && <h2>Loading...</h2>}
             {error && <h2>{error}</h2>}
             
-            {users && users.map((user) => {
-                const {id, username, email} = user;
-                return (
-                    <article key={id} className="card">
-                        <p>{username}</p>
-                        <p>{email}</p>
-                        <button className="btn">Add</button>
-                        <button className="btn">Delete</button>
-                    </article>
-                )
-            })}
-        
+            <section>
+                {users && users.map((user) => {
+                    const {id, username, email} = user;
+                    return (
+                        <article key={id} className="card">
+                            <p>{username}</p>
+                            <p>{email}</p>
+                            <button className="btn">Add</button>
+                            <button className="btn">Delete</button>
+                        </article>
+                    )
+                })}
+            
+            </section>
         </div>
     );
 };
