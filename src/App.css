@@ -1,3 +1,14 @@
+.App {
+    text-align: center;
+}
+
+.card {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #182c34;
+    color: white;
+}
+
 nav {
     height: 10vh;
     background-color: #282c34;
@@ -13,4 +24,13 @@ nav {
 
 .nav-link:hover {
     color: orange;
+}
+
+
+.btn {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    width: 5rem;
+    cursor: pointer;
+    transition: all 0.3s;
 }
